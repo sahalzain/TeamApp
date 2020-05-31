@@ -1,0 +1,17 @@
+
+<div>
+  <mat-list role="list">
+    <mat-list-item (click)="openMessageDialog()" role="listitem">Message</mat-list-item>
+    <mat-list-item (click)="addItem('button')" role="listitem">MUltiple Choice</mat-list-item>
+  </mat-list>
+</div>
+<div class="example-boundary">
+  <div *ngFor="let elemt of allComponents">
+    <div class="example-box" (cdkDragStarted)="handleDragStart($event)"
+    (click)="handleClick($event)" cdkDragBoundary=".example-boundary" cdkDrag>
+      <button (click)="remove(elemt.id)">x</button>
+      <div *ngIf="elemt.type=='text'">{{elemt.value}}</div>
+    </div>
+  </div>
+</div>
+
