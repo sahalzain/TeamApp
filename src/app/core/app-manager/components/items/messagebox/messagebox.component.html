@@ -1,10 +1,25 @@
 <div mat-dialog-content>
-   <mat-form-field>
+  <mat-form-field>
+    <mat-label>label</mat-label>
+    <input matInput [(ngModel)]="data.label">
+  </mat-form-field>
+  <mat-form-field>
     <mat-label>message to display</mat-label>
-    <input matInput [(ngModel)]="data.message">
+    <input matInput [(ngModel)]="data.value">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>target</mat-label>
+    <mat-select [(ngModel)]="data.target">
+      <mat-option *ngFor="let item of allNodes" [value]="item.id" >
+        {{item.label}}
+      </mat-option>
+      <mat-option [value]="'end'">
+       end
+      </mat-option>
+    </mat-select>
   </mat-form-field>
 </div>
 <div mat-dialog-actions>
   <button mat-button (click)="onNoClick()">Cancel</button>
-  <button mat-button [mat-dialog-close]="data.message" cdkFocusInitial>Ok</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
 </div>

@@ -16,20 +16,10 @@ import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
-      HomeComponent,
-      MessageBoxDialog,
-      MultiplechoiceDialog
   ],
   entryComponents: [
-    MessageBoxDialog,
-    MultiplechoiceDialog
   ],
   imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    FormsModule,
-    MaterialModule,
-    HttpClientModule,
   ],
   providers: [],
   bootstrap: []

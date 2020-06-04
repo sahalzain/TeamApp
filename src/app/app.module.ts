@@ -11,7 +11,10 @@ import { MaterialModule } from './core/material.module';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { NgxGraphModule } from '@swimlane/ngx-graph';
 import { MessageBoxDialog } from './core/app-manager/components/items/messagebox/messagebox.component';
+import { AppUtilityService } from './core/app-manager/services/app.utility.service';
+
 
 @NgModule({
   declarations: [
@@ -27,11 +30,12 @@ import { MessageBoxDialog } from './core/app-manager/components/items/messagebox
     HttpClientModule,
     MaterialModule,
     MatNativeDateModule,
+    NgxGraphModule
   ],
   entryComponents: [
     MessageBoxDialog,
   ],
-  providers: [],
+  providers: [AppUtilityService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
